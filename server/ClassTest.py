@@ -7,26 +7,24 @@ class MyClass:
 
 myObject = MyClass()
 
-print myObject.function()
 
+class UserFirstLastNames:
+    def __init__(self, first_name):
+        self.first_name = first_name
 
-
-class User:
     first_name = ""
     lest_name = ""
-    age = 0
-    sex = ""
 
 
-user = User()
+user = UserFirstLastNames("first_name")
 user.first_name = "Andrey"
 user.last_name = "Savchenko"
-user.age = 28
-user.sex = "male"
 
-print vars(user)
+anotherUser = UserFirstLastNames("second_name")
+anotherUser.first_name = "Andrey"
 
-class UserWithConstructor:
+
+class UserWithFirstLastAgeSex:
     first_name = ""
     last_name = ""
     age = 0
@@ -39,5 +37,12 @@ class UserWithConstructor:
         self.sex = sex
 
 
-userWithConstructor = UserWithConstructor("Borja", "Martin", 30, "male")
-print vars(userWithConstructor)
+userWithConstructor = UserWithFirstLastAgeSex("Borja", "Martin", 30, "male")
+
+
+def doSomethingWithUserData(user: UserWithFirstLastAgeSex):
+    print(user.sex)
+
+
+doSomethingWithUserData(userWithConstructor)
+doSomethingWithUserData(user)

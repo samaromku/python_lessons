@@ -5,18 +5,18 @@ if x == 1:
 
 word = "test word"
 if isinstance(word, str):
-    print ("is string")
+    print("is string")
 
 myList = [12, "test", 1, "hui"]
-print myList[0]
-print myList[1]
-print myList[2]
-print myList[3]
+print(myList[0])
+print(myList[1])
+print(myList[2])
+print(myList[3])
 
-print ("test hui %s" % x)
+print("test hui %s" % x)
 
 thirdX = 10 ** 5
-print thirdX
+print(thirdX)
 
 lotsofhellos = "hello " * 10
 print(lotsofhellos)
@@ -27,37 +27,37 @@ all_numbers = odd_numbers + even_numbers
 print(all_numbers)
 
 arrayOfEvenElements = [2] * 25
-print arrayOfEvenElements
+print(arrayOfEvenElements)
 
-print ("%s test %s" % (1, 2))
+print("%s test %s" % (1, 2))
 
 data = ("John", "Doe", 53.44)
 format_string = "Hello"
 
 print(format_string + " %s %s Your current balance is $%f" % data)
-print data[2]
+print(data[2])
 
 if 2 == 10 or True == True:
-    print True
+    print(True)
 
 if "2" in ("3", "2"):
-    print "contains"
+    print("contains")
 
 x = 5
 if x == 3:
-    print "2==3"
+    print("2==3")
     pass
 elif x == 10:
-    print "2==10"
+    print("2==10")
     pass
 else:
-    print "non is true"
+    print("non is true")
     pass
 
 x = "test"
 y = 15
 
-print x is y
+print(x is y)
 
 first_array = [1]
 
