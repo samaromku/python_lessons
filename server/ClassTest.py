@@ -41,7 +41,7 @@ userWithConstructor = UserWithFirstLastAgeSex("Borja", "Martin", 30, "male")
 
 
 def doSomethingWithUserData(user: UserWithFirstLastAgeSex):
-    print(user.sex)
+    print(vars(user))
 
 
 doSomethingWithUserData(userWithConstructor)
