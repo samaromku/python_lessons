@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 from server.ClassTest import UserWithFirstLastAgeSex
 
@@ -22,9 +22,34 @@ def test_page():
         print(request.args)
         json_data = json.loads(request.data)
         user = json_data.get("user")
-        user_data = UserWithFirstLastAgeSex(user.get('first_name'), user.get('last_name'), user.get('age'), user.get('sex'))
+        user_data = UserWithFirstLastAgeSex(user.get('first_name'), user.get('last_name'), user.get('age'),
+                                            user.get('sex'))
         print(user_data)
         return vars(user_data)
+
+
+@app.route('/user_name', methods=['GET'])
+def user_name():
+    if request.method == 'GET':
+        user = {'username': request.args.get("user")}
+        return '''
+<html>
+    <head>
+        <title>Home Page - Microblog</title>
+    </head>
+    <body>
+        <h1>Hello, ''' + user['username'] + '''!</h1>
+    </body>
+</html>'''
+
+
+@app.route('/html_file', methods=['GET'])
+def html_file():
+    user = UserWithFirstLastAgeSex(request.args.get("first_name"),
+                                   request.args.get("last_name"),
+                                   request.args.get("age"),
+                                   request.args.get("sex"))
+    return render_template('test.html', title='Home', user=user)
 
 
 if __name__ == '__main__':
