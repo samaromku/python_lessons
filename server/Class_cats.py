@@ -28,7 +28,4 @@ def print_all_cats():
     print(vars(cat3))
 
 
-print("print_all_cats")
-print_all_cats()
-print("print_all_cats_parameters")
-print_all_cats_parameters()
+cats_list = [cat1, cat2, cat3]
